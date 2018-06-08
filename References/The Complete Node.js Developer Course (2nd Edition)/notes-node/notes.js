@@ -11,7 +11,8 @@ const addNote = (title, body) => {
     body
   };
 
-  // (Sychronous) file read
+  // FETCH NOTES
+  // (Sychronously) file read
   try {
     let notesString = fs.readFileSync("notes-data.json");
     notes = JSON.parse(notesString);
@@ -19,10 +20,18 @@ const addNote = (title, body) => {
 
   }
 
+  // const duplicateNotes = notes.filter((note) => {
+  //     return note.title === title; // Bool value
+  // });
+  // Same as vvvvvvv
+
+  // (duplicateNotes) is a Boolean value
   const duplicateNotes = notes.filter((note) => note.title === title);
 
   if (duplicateNotes.length === 0) {
+    // UPDATE NOTES with new note with .push()
     notes.push(note);
+    // SAVE NOTES by writing to file
     fs.writeFileSync("notes-data.json", JSON.stringify(notes));
   }
 };
