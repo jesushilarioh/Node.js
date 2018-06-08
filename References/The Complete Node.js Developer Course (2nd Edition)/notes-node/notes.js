@@ -11,6 +11,7 @@ const addNote = (title, body) => {
     body
   };
 
+  // (Sychronous) file read
   try {
     let notesString = fs.readFileSync("notes-data.json");
     notes = JSON.parse(notesString);
