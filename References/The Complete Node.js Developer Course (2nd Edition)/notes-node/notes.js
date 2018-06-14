@@ -61,7 +61,6 @@ const removeNote = (title) => {
 
 const logNote = (note) => {
   // Break on this line and use repl to output note
-  debugger;
   console.log("--");
   console.log(`Title: ${note.title}`);
   console.log(`Body: ${note.body}`);
