@@ -1,5 +1,3 @@
-console.log("Starting notes.js");
-
 const fs = require("fs");
 
 // LOCAL FUNCTIONS
@@ -41,7 +39,7 @@ const addNote = (title, body) => {
 };
 
 const getAll = () => {
-  console.log("Fetching all notes");
+  return fetchNotes();
 }
 
 const getNote = (title) => {
